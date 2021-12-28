@@ -14,6 +14,9 @@
     ],
     "permissions":[
         "downloads"
-    ]
+    ],
+    "background":{
+        "page": "src/background.html"
+    }
 
 }

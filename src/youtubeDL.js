@@ -21,6 +21,14 @@ function downloadURI(event){
     
 
     window.postMessage(data, '*');
+
+    var dl = document.getElementById("videoDownloadDropdown");
+    if(dl.className.indexOf("shown") > -1){
+        dl.className = dl.className.replace("shown", "");
+    }
+    else{
+        dl.className += "shown";
+    }
 }
 
     var videoUrls = ytplayer.config.args.url_encoded_fmt_stream_map.split(",").map(function(item){
@@ -51,7 +59,8 @@ function downloadURI(event){
 
     for(i in videoUrls){
         var item = document.createElement("a");
-        item.innerText = videoUrls[i]["quality"];
+        var ext = videoUrls[i]["type"].split("/")[1].split(";")[0];
+        item.innerText = videoUrls[i]["quality"] + "( " + ext + ")";
         item.setAttribute("href", videoUrls[i]["url"]);
         item.setAttribute("target", "_blank");
         item.setAttribute("data-type", videoUrls[i]["type"]);
