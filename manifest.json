@@ -1,0 +1,7 @@
+{
+    "name" : "Simple Youtube Downloader",
+    "description" : "Download youtube videos simpler than before",
+    "version" : "0.1",
+    "author" : "Wisely Chung",
+    "manifest_version" : 2
+}
